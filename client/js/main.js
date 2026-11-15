@@ -10,16 +10,16 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
-const geometry = new THREE.BoxGeometry(1, 1, 1);
-const material = new THREE.MeshBasicMaterial({ color: 0x00ff88});
+const chargeGeometry = new THREE.SphereGeometry(0.5, 32, 32);
+const chargeMaterial = new THREE.MeshBasicMaterial({ color: 0xff3333});
 
-const cube = new THREE.Mesh(geometry, material)
+const charge = new THREE.Mesh(chargeGeometry, chargeMaterial)
 
-scene.add(cube)
+scene.add(charge)
 
 function animate() {
-    cube.rotation.x += 0.01;
-    cube.rotation.y += 0.01;
+    charge.rotation.x += 0.01;
+    charge.rotation.y += 0.01;
     renderer.render(scene, camera);
 }
 
